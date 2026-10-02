@@ -3,22 +3,10 @@ public class Main {
     public static void main(String[] args) {
 
         // Create Vehicle object 1
-        Vehicle vehicle1 = new Vehicle();
-        vehicle1.brand = "Toyota";
-        vehicle1.model = "Corolla";
-        vehicle1.year = 2020;
-
-        // Create Vehicle object 2
-        Vehicle vehicle2 = new Vehicle();
-        vehicle2.brand = "Ford";
-        vehicle2.model = "Mustang";
-        vehicle2.year = 1995;
-
-        // Create Vehicle object 3
-        Vehicle vehicle3 = new Vehicle();
-        vehicle3.brand = "Honda";
-        vehicle3.model = "Civic";
-        vehicle3.year = 2010;
+        Vehicle vehicle1 = new Vehicle("Toyota", "Corolla", 2020);
+        Vehicle vehicle2 = new Vehicle("Ford", "Mustang", 1995);
+        Vehicle vehicle3 = new Vehicle("Honda", "Civic",   2010);
+        
 
         // Vehicle 1
         vehicle1.displayInfo();
