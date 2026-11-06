@@ -1,55 +1,49 @@
-  
-        
-       
-     
 public class Main {
 
-    public static void main(String[] args) {
-
-                 Vehicle vehicle1 = new Vehicle("Toyota", "Corolla", 2020);
-        Vehicle vehicle2 = new Vehicle("Ford", "Mustang", 1995);
-        Vehicle vehicle3 = new Vehicle("Honda", "Civic", 2010);
-
-                 vehicle1.displayInfo();
-        System.out.println("Getters -> Brand: " + vehicle1.getBrand() + ", Model: " + vehicle1.getModel() + ", Year: " + vehicle1.getYear());
-        System.out.println("Age: " + vehicle1.calculateAge());
-        System.out.println("Vintage: " + vehicle1.isVintage());
-        System.out.println();
-
-         
-        vehicle2.displayInfo();
-        System.out.println("Getters -> Brand: " + vehicle2.getBrand() + ", Model: " + vehicle2.getModel() + ", Year: " + vehicle2.getYear());
-        System.out.println("Age: " + vehicle2.calculateAge());
-        System.out.println("Vintage: " + vehicle2.isVintage());
-        System.out.println();
-
-         
-        vehicle3.displayInfo();
-        System.out.println("Getters -> Brand: " + vehicle3.getBrand() + ", Model: " + vehicle3.getModel() + ", Year: " + vehicle3.getYear());
-        System.out.println("Age: " + vehicle3.calculateAge());
-        System.out.println("Vintage: " + vehicle3.isVintage());
-        System.out.println();
-
-         
-        System.out.println("=== Testing setYear() on Vehicle 1 ===");
-        
-                 boolean test1 = vehicle1.setYear(2000);
-        System.out.println(test1 + "; year is " + vehicle1.getYear() + "; age " + vehicle1.calculateAge() + "; vintage " + vehicle1.isVintage());
-
-                boolean test2 = vehicle1.setYear(1885);
-        System.out.println(test2 + "; year remains " + vehicle1.getYear());
-
-         
-        boolean test3 = vehicle1.setYear(2027);
-        System.out.println(test3 + "; year remains " + vehicle1.getYear());
-        System.out.println();
-
-                 System.out.println("=== Testing Constructor Validation ===");
-
-                Vehicle invalidVehicle1 = new Vehicle("Toyota", "Corolla", 1885);
-        System.out.println("Initial year is " + invalidVehicle1.getYear());
-
-                Vehicle invalidVehicle2 = new Vehicle("Toyota", "Corolla", 2027);
-        System.out.println("Initial year is " + invalidVehicle2.getYear());
+    public static void printDetails(Vehicle vehicle){
+    vehicle.displayInfo();
     }
-}
+
+	public static void main(String[] args) {
+	System.out.println("=== 1. Parent Reference ===");
+
+        Vehicle vehicle = new Car("Toyota", "Vios", 2022, 4);
+        vehicle.displayInfo();
+
+        vehicle = new Motorcycle("Honda", "Click 125i", 2023,
+                "4-stroke, single-cylinder, liquid-cooled engine");
+        vehicle.displayInfo();
+
+        Truck truck = new Truck("Mitsubishi", "L300", 2024, 4);
+        truck.displayInfo();
+
+
+        System.out.println("\n=== 2. Method Parameter ===");
+
+        Car car = new Car("Toyota", "Fortuner", 2021, 4);
+
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Mio i125", 2022,
+                "4-stroke, single-cylinder, air-cooled engine");
+
+        Truck trucks = new Truck("Isuzu", "N-Series", 2020, 4);
+
+        printDetails(car);
+        printDetails(motorcycle);
+        printDetails(trucks);
+
+        System.out.println("\n=== 3. Polymorphic Array ===");
+
+Vehicle[] vehicles = {
+    new Car("Honda", "City", 2023, 4),
+    new Motorcycle("Suzuki", "Raider R150", 2022,
+            "4-stroke, single-cylinder, liquid-cooled engine"),
+    new Truck("Toyota", "Hilux", 2023, 4)
+};
+        for(Vehicle currentVehicle: vehicles){
+            printDetails(currentVehicle);
+        }
+        System.out.println();
+    }
+}    
+
+	    
