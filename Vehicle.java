@@ -53,7 +53,7 @@
     }
 
     public abstract void moveForward();
-    public abstract void Backward();
+    public abstract void moveBackward();
     public abstract void moveLeft();
     public abstract void moveRight();  
 
