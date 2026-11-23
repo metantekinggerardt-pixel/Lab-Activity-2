@@ -1,11 +1,20 @@
+package app;
+
+import Contracts.Serviceable;
+import Devices.Printer;
+import Vehicle.Car;
+import Vehicle.Motorcycle;
+import Vehicle.Truck;
+import Vehicle.Vehicle;
+
 public class Main {
 
     public static void printDetails(Vehicle vehicle) {
         vehicle.displayInfo();
     }
-    
-     public static void performService(Serviceable item) {
-        item.service();
+
+    public static void performService(Serviceable item) {
+        item.Service();
     }
 
     public static void main(String[] args) {
@@ -80,7 +89,7 @@ public class Main {
                         "4-stroke, single-cylinder, liquid-cooled engine"),
                 new Truck("Toyota", "Hilux", 2023, 4)
         };
-        
+
         Serviceable[] serviceables = {
                 new Car("Honda", "City", 2023, 4),
                 new Motorcycle("Suzuki", "Raider R150", 2022,
@@ -97,7 +106,7 @@ public class Main {
             performService((Serviceable) currentVehicle);
             System.out.println();
         }
-        for (Serviceable serviceable : serviceables){
+        for (Serviceable serviceable : serviceables) {
             performService(serviceable);
         }
         System.out.println();
